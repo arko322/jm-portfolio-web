@@ -80,10 +80,12 @@ npm install
 
 ## 🧞 Comandos
 
-npm run dev       → servidor local en localhost:4321  
-npm run build     → build de producción  
-npm run preview   → preview del build  
-npm run astro     → comandos CLI de Astro  
+| Comando           | Descripción                        |
+| :---------------- | :--------------------------------- |
+| `npm run dev`     | Servidor local en `localhost:4321` |
+| `npm run build`   | Build de producción                |
+| `npm run preview` | Preview del build generado         |
+| `npm run astro`   | Acceso al CLI de Astro             |
 
 ---
 
