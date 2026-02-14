@@ -1,0 +1,64 @@
+@import "tailwindcss"; /* Tailwind base */
+
+/* Global styles */
+html,
+body {
+    scroll-behavior: smooth; /* scroll suave */
+	box-sizing: border-box; /* caja base */
+	margin: 0; /* reset margen */
+	font-family: system-ui, sans-serif; /* tipografía base */
+}
+
+/* Custom scrollbar */
+.custom-scroll::-webkit-scrollbar {
+	width: 6px; /* ancho del scrollbar */
+}
+.custom-scroll::-webkit-scrollbar-track {
+	background: transparent; /* track transparente */
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+	background-color: rgba(255, 255, 255, 0.15); /* thumb suave */
+	border-radius: 999px; /* thumb redondeado */
+}
+.custom-scroll:hover::-webkit-scrollbar-thumb {
+	background-color: rgba(255, 255, 255, 0.25); /* thumb más visible al hover */
+}
+.no-scroll {
+	overflow: hidden; /* bloquea scroll */
+	height: 100vh; /* evita salto por scrollbar */
+}
+.custom-scroll {
+	scrollbar-width: thin; /* scrollbar fino en Firefox */
+	scrollbar-color: rgba(255,255,255,0.2) transparent; /* colores del scrollbar en Firefox */
+}
+
+/* Scroll indicator animation */
+@keyframes scroll-indicator { /* animación del indicador de scroll */
+	0% {
+		transform: translateY(0); /* inicio arriba */
+		opacity: 0; /* invisible */
+	}
+	30% {
+		opacity: 1; /* aparece */
+	}
+	60% {
+		transform: translateY(10px); /* baja */
+		opacity: 1; /* visible */
+	}
+	100% {
+		transform: translateY(14px); /* baja un poco más */
+		opacity: 0; /* desaparece */
+	}
+}
+.animate-scroll-indicator {
+	animation: scroll-indicator 1.6s ease-in-out infinite; /* loop del indicador */
+}
+
+/* Hide scrollbar for project tags */
+.project-card-tags {
+  scrollbar-width: none; /* oculta scrollbar en Firefox */
+}
+
+.project-card-tags::-webkit-scrollbar {
+  display: none; /* oculta scrollbar en WebKit */
+}

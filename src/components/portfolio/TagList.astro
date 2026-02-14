@@ -1,0 +1,24 @@
+---
+import Tag from './Tag.astro'; // Componente individual de tag
+import { TOOLKIT } from '../../data/toolkit'; // Datos centralizados de tecnologías
+import type { ToolkitKey } from '../../data/toolkit'; // Tipo de claves válidas del toolkit
+
+interface Props {
+  tags: ToolkitKey[]; // Lista de tecnologías a renderizar
+  align?: 'start' | 'center'; // Alineación opcional del grupo
+}
+
+const { tags, align = 'start' } = Astro.props; // Props con alineación por defecto
+---
+
+<!-- Tag list wrapper -->
+<div
+  class={`flex flex-wrap gap-2 ${
+    align === 'center' ? 'justify-center' : 'justify-start'
+  }`}
+>
+  {tags.map(key => {
+    const tag = TOOLKIT[key]; // Obtener metadata del tag desde toolkit
+    return <Tag {...tag} />; // Renderizar tag
+  })}
+</div>

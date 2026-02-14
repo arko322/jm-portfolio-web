@@ -1,0 +1,44 @@
+--- 
+// Layout
+import Layout from '../layouts/Layout.astro';
+
+// Secciones
+import Hero from '../components/Hero.astro'; // Hero
+import WhoIAm from '../components/WhoIAm.astro'; // Sobre mí
+import Experience from '../components/Experience.astro'; // Experiencia
+import Projects from '../components/Projects.astro'; // Proyectos
+import Testimonials from '../components/Testimonials.astro'; // Testimonios
+import Contact from '../components/Contact.astro'; // Contacto
+
+// Componentes utilitarios
+import Divisor from '../components/Divisor.astro'; // Separador entre secciones
+import BackToTopButton from '../components/BackToTopButton.astro'; // Botón flotante para volver al inicio
+import ScrollParticles from '../components/effects/ScrollParticles.astro'; // Efecto visual ligado al scroll
+---
+
+<!-- Layout base del sitio -->
+<Layout title="Home">
+
+	<!-- Wrapper principal de la página -->
+	<div class="w-full bg-[#0b0f17] text-white">
+
+		<ScrollParticles /> <!-- Efecto de partículas al hacer scroll -->
+
+		<Hero /> <!-- Hero -->
+		<WhoIAm /> <!-- Quién soy -->
+		<Experience /> <!-- Experiencia -->
+
+		<Divisor /> <!-- Separador -->
+
+		<Projects /> <!-- Proyectos -->
+
+		<Divisor /> <!-- Separador -->
+
+		<Testimonials /> <!-- Testimonios -->
+		<Contact /> <!-- Contacto -->
+
+	</div>
+
+	<BackToTopButton /> <!-- Botón flotante para volver al inicio -->
+
+</Layout>

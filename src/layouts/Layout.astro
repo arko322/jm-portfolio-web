@@ -1,0 +1,51 @@
+---
+import '../styles/global.css'; // Estilos Globales Del Sitio
+import Header from '../components/Header.astro'; // Header Principal
+import Footer from '../components/Footer.astro'; // Footer Del Sitio
+import SpeedInsights from "@vercel/speed-insights/astro" // Vercel Speed Insights
+import Analytics from '@vercel/analytics/astro' // Vercel Analytics
+---
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="robots" content="index, follow" /> <!-- Permitir Indexado -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="description" content="JM Portfolio Web - Crafting fast, modern websites focused on performance, SEO, and content." /> <!-- Descripción SEO -->
+		<meta name="keywords" content="web developer, web designer, frontend developer, SEO, performance optimization, modern websites" /> <!-- Keywords SEO -->
+		<meta name="author" content="Jael Meire" />
+		<meta name="viewport" content="width=device-width" /> <!-- Responsive -->
+
+		<!-- Favicon modo oscuro -->
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/favicon-dark.svg"
+			media="(prefers-color-scheme: dark)"
+		/>
+		<!-- Favicon modo claro -->
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/favicon-light.svg"
+			media="(prefers-color-scheme: light)"
+		/>
+
+		<meta name="generator" content={Astro.generator} /> <!-- Astro Generator -->
+		<title>JM Portfolio Web</title>
+	</head>
+
+	<body>
+		<Header /> <!-- Header Global -->
+
+			<slot /> <!-- Contenido Dinámico -->
+
+		<Footer /> <!-- Footer Global -->
+
+		<Analytics /> <!-- Vercel Analytics -->
+		<SpeedInsights /> <!-- Vercel Speed Insights -->
+	</body>
+
+</html>

@@ -1,0 +1,128 @@
+<canvas id="particle-canvas" class="absolute w-full inset-0 pointer-events-none"></canvas> <!-- Canvas de partículas -->
+
+<!-- Scroll Particles Script -->
+<script>
+	(() => {
+		const canvas = document.getElementById('particle-canvas') as HTMLCanvasElement; // Canvas principal
+		if (!canvas) return;
+
+		const ctx = canvas.getContext('2d'); // Contexto 2D
+		if (!ctx) return;
+
+		// Ajustar tamaño del canvas
+		const setCanvasSize = () => {
+			canvas.width = window.innerWidth; // Ancho completo
+			canvas.height = document.documentElement.scrollHeight; // Alto total del documento
+		};
+		setCanvasSize();
+		window.addEventListener('resize', setCanvasSize); // Recalcular al redimensionar
+
+		// Clase Partícula
+		class Particle {
+			x: number; // Posición X
+			y: number; // Posición Y
+			size: number; // Tamaño
+			speedX: number; // Velocidad horizontal
+			speedY: number; // Velocidad vertical
+			opacity: number; // Opacidad actual
+			life: number; // Vida actual
+			maxLife: number; // Vida máxima
+			color: string; // Color RGB
+
+			constructor(x: number, y: number) {
+				this.x = x + (Math.random() - 0.5) * 100; // Desplazamiento inicial X
+				this.y = y + (Math.random() - 0.5) * 100; // Desplazamiento inicial Y
+				this.size = Math.random() * 3 + 1; // Tamaño aleatorio
+				this.speedX = (Math.random() - 0.5) * 2; // Movimiento lateral
+				this.speedY = (Math.random() - 0.5) * 2 - 1; // Movimiento ligeramente hacia arriba
+				this.opacity = 1; // Opacidad inicial
+				this.life = 0; // Vida inicial
+				this.maxLife = Math.random() * 60 + 40; // Duración total
+
+				// Paleta de colores
+				const colors = [
+					'139, 92, 246', // indigo
+					'168, 85, 247', // purple
+					'59, 130, 246', // blue
+				];
+				this.color = colors[Math.floor(Math.random() * colors.length)]; // Color aleatorio
+			}
+
+			update() {
+				this.x += this.speedX; // Actualizar X
+				this.y += this.speedY; // Actualizar Y
+				this.life++; // Avanzar vida
+
+				// Fade progresivo
+				this.opacity = 1 - (this.life / this.maxLife);
+			}
+
+			draw() {
+				if (!ctx) return;
+				ctx.save();
+				ctx.globalAlpha = this.opacity * 0.6; // Opacidad suavizada
+				ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
+				ctx.beginPath();
+				ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+				ctx.fill();
+				ctx.restore();
+			}
+
+			isDead() {
+				return this.life >= this.maxLife; // Verificar si expiró
+			}
+		}
+
+		// Lista de partículas
+		let particles: Particle[] = [];
+		let lastScrollY = window.scrollY; // Scroll anterior
+		let scrollVelocity = 0; // Velocidad del scroll
+
+		// Control de frecuencia
+		let lastParticleTime = 0;
+		const particleThrottle = 30; // Intervalo mínimo entre emisiones
+
+		// Generar partículas al hacer scroll
+		window.addEventListener('scroll', () => {
+			const currentScrollY = window.scrollY;
+			scrollVelocity = Math.abs(currentScrollY - lastScrollY); // Calcular velocidad
+			lastScrollY = currentScrollY;
+
+			const now = Date.now();
+			if (scrollVelocity > 2 && now - lastParticleTime > particleThrottle) {
+				lastParticleTime = now;
+
+				// Cantidad según velocidad
+				const particleCount = Math.min(Math.floor(scrollVelocity / 10) + 1, 4);
+
+				for (let i = 0; i < particleCount; i++) {
+					const x = Math.random() * window.innerWidth;
+					const y = currentScrollY + window.innerHeight / 2 + (Math.random() - 0.5) * window.innerHeight;
+					particles.push(new Particle(x, y)); // Crear partícula
+				}
+			}
+		});
+
+		// Loop de animación
+		function animate() {
+			if (!ctx) return;
+
+			ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpiar canvas
+
+			particles = particles.filter(particle => {
+				particle.update(); // Actualizar estado
+				particle.draw(); // Dibujar
+				return !particle.isDead(); // Mantener solo vivas
+			});
+
+			// Limitar cantidad por rendimiento
+			if (particles.length > 100) {
+				particles = particles.slice(-100);
+			}
+
+			requestAnimationFrame(animate); // Siguiente frame
+		}
+
+		animate(); // Iniciar animación
+	})();
+</script>

@@ -1,0 +1,116 @@
+---
+// Componentes
+import TagList from '../components/portfolio/TagList.astro'; // Lista de tags
+---
+
+<section id="who-i-am" class="max-w-5xl mx-auto px-6 pt-48 pb-24"> <!-- Sección Who I Am -->
+	<div>
+
+		<!-- Label -->
+		<p class="text-xs tracking-widest text-gray-500 mb-4">WHO I AM</p>
+
+		<!-- Título -->
+		<h2 class="text-3xl font-bold mb-6">
+			Web Designer & Developer
+		</h2>
+
+		<!-- Descripción -->
+		<p class="text-gray-400 leading-relaxed mb-8">
+			I build lightning-fast websites with Astro, Tailwind CSS, and WordPress.
+			My focus: performance, SEO, and user experience. No bloat, no complexity—just
+			sites that load instantly and convert visitors.
+		</p>
+
+		<!-- Categorías técnicas -->
+		<div class="grid gap-4">
+
+			<!-- Frontend -->
+			<div class="rounded-2xl bg-white/5 border border-white/10 p-4">
+				<div class="flex items-center justify-between gap-4">
+
+					<!-- Header frontend -->
+					<div class="flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10">
+						<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+						</svg>
+						<span class="text-xs tracking-widest text-gray-400">FRONTEND TECHNOLOGIES</span>
+					</div>
+
+					<div class="hidden sm:block h-px bg-white/10 flex-1"></div>
+				</div>
+
+				<!-- Tags frontend -->
+				<div class="mt-3">
+					<TagList
+						tags={[
+							'astro',
+							'tailwind',
+							'typescript',
+							'html',
+							'css',
+							'javascript',
+						]}
+					/>
+				</div>
+			</div>
+
+			<!-- WordPress -->
+			<div class="rounded-2xl bg-white/5 border border-white/10 p-4">
+				<div class="flex items-center justify-between gap-4">
+
+					<!-- Header WordPress -->
+					<div class="flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10">
+						<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+						</svg>
+						<span class="text-xs tracking-widest text-gray-400">WORDPRESS TOOLKIT</span>
+					</div>
+
+					<div class="hidden sm:block h-px bg-white/10 flex-1"></div>
+				</div>
+
+				<!-- Tags WordPress -->
+				<div class="mt-3">
+					<TagList
+						tags={[
+							'wordpress',
+							'woocommerce',
+							'yoastSeo',
+							'contactForm7',
+						]}
+					/>
+				</div>
+			</div>
+
+			<!-- Diseño -->
+			<div class="rounded-2xl bg-white/5 border border-white/10 p-4">
+				<div class="flex items-center justify-between gap-4">
+
+					<!-- Header diseño -->
+					<div class="flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10">
+						<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+						</svg>
+						<span class="text-xs tracking-widest text-gray-400">DESIGN TOOLS</span>
+					</div>
+
+					<div class="hidden sm:block h-px bg-white/10 flex-1"></div>
+				</div>
+
+				<!-- Tags diseño -->
+				<div class="mt-3">
+					<TagList
+						tags={[
+							'figma',
+							'affinity',
+							'unsplash',
+							'flaticon',
+							'coolors',
+						]}
+					/>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>

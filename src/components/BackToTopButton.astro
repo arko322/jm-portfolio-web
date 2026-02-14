@@ -1,0 +1,70 @@
+<!-- Back to top button -->
+<a
+	id="backToTop"
+	href="#home"
+	aria-label="Back to top"
+	class="fixed bottom-6 right-6 z-30 opacity-0 pointer-events-none translate-y-4
+		flex items-center justify-center w-12 h-12 rounded-full
+		bg-white text-black shadow-lg
+		transition-all duration-300 hover:scale-105">
+
+	<!-- Arrow icon -->
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		fill="none"
+		viewBox="0 0 24 24"
+		stroke-width="1.5"
+		stroke="currentColor"
+		class="w-5 h-5">
+
+		<path
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			d="M4.5 15.75L12 8.25l7.5 7.5"
+		/>
+	</svg>
+</a>
+
+<!-- Back to top button script -->
+<script>
+
+	// Hero section reference
+	const home = document.getElementById('home');
+
+	// Button reference
+	const backToTop = document.getElementById('backToTop');
+
+	if (home && backToTop) {
+
+		// Observe when hero enters or leaves viewport
+		const observer = new IntersectionObserver(
+			([entry]) => {
+
+				// Hide button while hero is visible
+				if (entry.isIntersecting) {
+					backToTop.classList.add(
+						'opacity-0',
+						'pointer-events-none',
+						'translate-y-4'
+					);
+				}
+
+				// Show button after scrolling past hero
+				else {
+					backToTop.classList.remove(
+						'opacity-0',
+						'pointer-events-none',
+						'translate-y-4'
+					);
+				}
+			},
+
+			// Trigger slightly before full exit
+			{ threshold: 0.2 }
+		);
+
+		// Start observing hero
+		observer.observe(home);
+	}
+
+</script>
